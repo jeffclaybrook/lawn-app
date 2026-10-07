@@ -31,3 +31,11 @@ export type TransactionData = {
  revenue: number
  expenses: number
 }
+
+export type SummaryByPeriodRow = {
+ key: string
+ label: string
+ totalRevenue: number
+ totalExpenses: number
+ netProfit: number
+}

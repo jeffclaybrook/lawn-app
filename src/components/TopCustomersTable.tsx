@@ -35,7 +35,7 @@ export function TopCustomersTable({ customers }: TopCustomersTableProps) {
       value={displayCount}
       onValueChange={(value) => setDisplayCount(value as DisplayCount)}
      >
-      <SelectTrigger className="w-[140px]">
+      <SelectTrigger className="w-[110px]">
        <SelectValue />
       </SelectTrigger>
       <SelectContent position="popper">

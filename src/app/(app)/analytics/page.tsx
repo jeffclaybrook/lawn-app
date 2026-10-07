@@ -1,13 +1,14 @@
 import { redirect } from "next/navigation"
 import { getSession } from "@/lib/get-session"
 import { toChartData } from "@/lib/helpers"
-import { getRevenueVsExpenses, getTopCustomersByRevenue, getMostMowedLawns } from "@/lib/queries/analytics"
+import { getRevenueVsExpenses, getTopCustomersByRevenue, getMostMowedLawns, getSummaryByPeriod } from "@/lib/queries/analytics"
 import type { MostMowedData, TopCustomersData } from "@/types"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar"
 import { Header } from "@/components/Header"
 import { MostMowedTable } from "@/components/MostMowedTable"
+import { RevenueAndExpensesTable } from "@/components/RevenueAndExpensesTable"
 import { TopCustomersTable } from "@/components/TopCustomersTable"
 import { TransactionsChart } from "@/components/TransactionsChart"
 
@@ -40,6 +41,9 @@ export default async function Analytics() {
   mowingCount: lawn.mowingCount
  }))
 
+ const initialPeriod = "month" as const
+ const initialRows = await getSummaryByPeriod(initialPeriod)
+
  return (
   <>
    <Header
@@ -63,6 +67,10 @@ export default async function Analytics() {
        monthly={toChartData(monthly, "month")}
        quarterly={toChartData(quarterly, "quarter")}
        yearly={toChartData(yearly, "year")}
+      />
+      <RevenueAndExpensesTable
+       initialPeriod={initialPeriod}
+       initialRows={initialRows}
       />
       <TopCustomersTable customers={topCustomersData} />
       <MostMowedTable mowings={mostMowedData} />

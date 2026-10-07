@@ -52,7 +52,7 @@ export function TransactionsChart({
      value={period}
      onValueChange={(value) => setPeriod(value as AnalyticsPeriod)}
     >
-     <SelectTrigger className="w-[140px]">
+     <SelectTrigger className="w-[110px]">
       <SelectValue />
      </SelectTrigger>
      <SelectContent position="popper">
