@@ -25,13 +25,12 @@ export function RevenueAndExpensesTable({
 
  const handlePeriodChange = (value: AnalyticsPeriod) => {
   setPeriod(value)
+
   startTransition(async () => {
    const nextRows = await getSummaryByPeriod(value)
    setRows(nextRows)
   })
  }
-
- const data = []
 
  return (
   <Card>
@@ -56,7 +55,7 @@ export function RevenueAndExpensesTable({
     </Select>
    </CardHeader>
    <CardContent>
-    {data.length === 0 ? (
+    {rows.length === 0 ? (
      <div className="flex flex-col items-center justify-center h-48">
       <EmptyStateIcon className="size-32" />
       <p>No revenue or expense data available.</p>

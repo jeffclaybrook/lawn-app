@@ -82,12 +82,12 @@ export function ExpensesTable({ expenses }: ExpensesTableProps) {
  }
 
  return (
-  <div className="space-y-4 h-full">
-   <Card className="h-full">
+  <div>
+   <Card>
     <CardHeader>
      <CardTitle>Expenses</CardTitle>
     </CardHeader>
-    <CardContent className="h-full">
+    <CardContent>
      {paginatedExpenses.length === 0 ? (
       <div className="flex flex-col items-center justify-center h-[calc(81svh-var(--header-height))]!">
        <EmptyStateIcon className="size-32" />

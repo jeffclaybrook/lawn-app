@@ -32,8 +32,8 @@ export default async function Home() {
    </Header>
    <div className="flex flex-1">
     <AppSidebar />
-    <SidebarInset className="flex flex-col gap-4 flex-1 p-4 pt-[--header-height:calc(--spacing(14))] overflow-y-auto">
-     <div className="flex flex-col items-stretch gap-4 pt-4 h-full">
+    <SidebarInset className="flex flex-col gap-4 flex-1 pb-4 md:px-4 pt-[--header-height:calc(--spacing(14))] overflow-y-auto">
+     <div className="flex flex-col items-stretch pt-4 h-full">
       <TransactionsTable transactions={transactions} />
      </div>
     </SidebarInset>

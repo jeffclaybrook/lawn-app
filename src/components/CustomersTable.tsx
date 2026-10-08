@@ -65,7 +65,7 @@ export function CustomersTable({ customers }: CustomersTableProps) {
  }, [currentPage, totalPages])
 
  return (
-  <div className="space-y-4">
+  <div>
    <Card>
     <CardHeader>
      <CardTitle>Customers</CardTitle>

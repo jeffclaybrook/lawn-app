@@ -59,7 +59,7 @@ export function TransactionsTable({ transactions }: TransactionsTableProps) {
  }, [currentPage, totalPages])
 
  return (
-  <div className="space-y-4">
+  <div>
    <Card>
     <CardHeader>
      <CardTitle>Transactions</CardTitle>

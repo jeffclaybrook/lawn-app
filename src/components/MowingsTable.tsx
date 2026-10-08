@@ -82,7 +82,7 @@ export function MowingsTable({ mowings }: MowingsTableProps) {
  }
 
  return (
-  <div className="space-y-4">
+  <div>
    <Card>
     <CardHeader>
      <CardTitle>Mowings</CardTitle>

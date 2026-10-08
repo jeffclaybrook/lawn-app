@@ -3,7 +3,7 @@ import { db } from "@/drizzle/db"
 import { customers, expenses, mowings } from "@/drizzle/schema"
 import type { AnalyticsPeriod, SummaryByPeriodRow } from "@/types"
 import { getSession } from "../get-session"
-import { getPeriodStart, getYearRange, getBucketKeyFormat } from "../helpers"
+import { getYearRange, getBucketKeyFormat } from "../helpers"
 
 const MONTH_LABELS = [
  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
